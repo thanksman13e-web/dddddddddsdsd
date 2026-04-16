@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON COCK</title>
+    <style>
+        body { background:#0a001f; color:#ff99cc; font-family:sans-serif; text-align:center; padding:40px 20px; min-height:100vh; }
+        h1 { font-size:50px; color:#ff1493; margin:40px 0 20px; }
+        input, button { 
+            width:100%; 
+            max-width:500px; 
+            padding:18px; 
+            margin:10px 0; 
+            font-size:19px; 
+            border-radius:25px; 
+        }
+        input { background:#1f1f3a; border:2px solid #ff1493; color:white; }
+        button { 
+            background:linear-gradient(90deg,#ff1493,#ff4500); 
+            color:white; 
+            border:none; 
+            font-weight:bold; 
+            cursor:pointer; 
+        }
+        .cat { 
+            background:#3a1f5c; 
+            padding:16px 24px; 
+            margin:8px; 
+            border-radius:15px; 
+            display:inline-block; 
+            cursor:pointer; 
+        }
+    </style>
+</head>
+<body>
+    <h1>NEON COCK</h1>
+    <p>Гей-порно поиск</p>
+
+    <input type="text" id="query" placeholder="Введи тему (twink, daddy...)">
+
+    <button onclick="searchAll()">🔥 НАЧАТЬ ПОИСК</button>
+
+    <div>
+        <div class="cat" onclick="quickSearch('twink')">Twink</div>
+        <div class="cat" onclick="quickSearch('bear')">Bear</div>
+        <div class="cat" onclick="quickSearch('daddy')">Daddy</div>
+    </div>
+
+    <script>
+        function searchAll() {
+            let theme = document.getElementById('query').value.trim() || "gay";
+            let q = encodeURIComponent(theme + " gay porno");
+            window.open("https://yandex.ru/search/?text=" + q, "_blank");
+            setTimeout(() => window.open("https://www.pornhub.com/gay/video/search?search=" + q, "_blank"), 400);
+        }
+
+        function quickSearch(cat) {
+            document.getElementById('query').value = cat;
+            searchAll();
+        }
+    </script>
+</body>
+</html>
